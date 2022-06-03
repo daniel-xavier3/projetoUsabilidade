@@ -1,0 +1,23 @@
+{{> header}}
+
+<table>
+    <tr>
+        <td>Action</td>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+   
+    {{#data}}
+        <tr>
+            <td>
+                <a href="update/{{id}}"><img src="/img/editar.png" alt="Editar"></a>
+                <a href="deletar/{{id}}" class='deletar'><img src="/img/lixeira.png" alt="Deletar"></a>
+            </td>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{age}}</td>
+        </tr>
+    
+    {{/data}}
+</table>

@@ -1,0 +1,21 @@
+{{> header}}
+
+<div class="box">
+    <form name='form1' action='/controllerUpdate' method='post'>
+        <fieldset>
+            <div class="inputBox">
+                <input type='hidden' name='id' id='id' placeholder='Id:' value='{{id}}' class="inputUser" required><br>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type='text' name='name' id='name' placeholder='Name:' value='{{name}}' class="inputUser" required><br>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type='text' name='age' id='age' placeholder='Age:' value='{{age}}' class="inputUser" required><br>
+            </div>
+            <br><br>
+            <input type='submit' name='btnSubmit' id='btnSubmit' value='Atualizar'><br>
+        </fieldset>
+    </form>
+</div>

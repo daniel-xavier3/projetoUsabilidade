@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(20, 146, 219), rgb(17, 51, 71));
+}
+
+a {
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    text-decoration: none;
+    
+}
+
+h1 {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}

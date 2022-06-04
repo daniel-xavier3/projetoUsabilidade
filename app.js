@@ -21,9 +21,7 @@ app.engine('handlebars', handlebars.engine({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
 app.get("/", function (req, res) {
-        res.render('index', {
-            style: 'style.css'
-        });
+        res.send('oi');
     });
 
 app.get("/inserir", (req, res) => {

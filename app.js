@@ -7,14 +7,12 @@ const app = express();
 
 const urlencodeParser = bodyParser.urlencoded({extended : false});
 
-const sql = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'9%Takakura',
-    port:3306
+const sql = mysql.createPool({
+    host:'us-cdbr-east-05.cleardb.net',
+    user:'bcd6566bc729bc',
+    password:'0a988156',
+    database: 'heroku_8dbd8eb0440736d'
 });
-
-sql.query("use nodejs");
 
 app.use('/img', express.static('img'));
 app.use('/css', express.static('css'));
@@ -37,20 +35,24 @@ app.get("/inserir", (req, res) => {
 
 app.get("/select/:id?", (req, res) => {
         if (!req.params.id) {
-            sql.query("select * from user order by id asc", (err, results, fields) => {
+            sql.getConnection((err, connection) => {
+                connection.query("select * from user order by id asc", (err, results, fields) => {
                     res.render('select', {
                         data: results,
                         style: 'table.css'
                     });
                 });
+            });
         }
         else {
-            sql.query("select * from user where id=? order by id asc", [req.params.id], (err, results, fields) => {
+            sql.getConnection((err, connection) => {
+                connection.query("select * from user where id=? order by id asc", [req.params.id], (err, results, fields) => {
                     res.render('select', {
                         data: results,
                         style: 'table.css'
                     });
                 });
+            });
         }
     });
 

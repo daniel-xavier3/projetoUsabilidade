@@ -5,5 +5,24 @@
     "express-handlebars": "^6.0.6",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.16"
-  }
+  },
+  "name": "projetoa3",
+  "version": "1.0.0",
+  "description": "projeto de usabilidade",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-xavier3/projetoUsabilidade.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-xavier3/projetoUsabilidade/issues"
+  },
+  "homepage": "https://github.com/daniel-xavier3/projetoUsabilidade#readme"
 }

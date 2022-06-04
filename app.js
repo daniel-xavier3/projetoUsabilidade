@@ -22,7 +22,7 @@ app.use('/js', express.static('js'));
 app.engine('handlebars', handlebars.engine({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
         res.render('index', {
             style: 'style.css'
         });
@@ -36,7 +36,7 @@ app.get("/inserir", (req, res) => {
 
 app.get("/select/:id?", (req, res) => {
     if (!req.params.id) {
-        this.sql.getConnection((err, connection) => {
+        sql.getConnection((err, connection) => {
             connection.query("select * from user order by id asc", (err, results, fields) => {
                 res.render('select', {
                     data: results,
@@ -46,7 +46,7 @@ app.get("/select/:id?", (req, res) => {
         });
     }
     else {
-        this.sql.getConnection((err, connection) => {
+        sql.getConnection((err, connection) => {
             connection.query("select * from user where id=? order by id asc", [req.params.id], (err, results, fields) => {
                 res.render('select', {
                     data: results,

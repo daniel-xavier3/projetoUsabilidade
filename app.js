@@ -23,7 +23,7 @@ app.engine('handlebars', handlebars.engine({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 
 app.get("/", function (req, res) {
-        res.send('index', {
+        res.render('index', {
             style: 'style.css'
         });
     });
